@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     //GUARDAR EN LA BASE DE DATOS
                     try {
                         daoProductos.create(producto);
+                        int id = daoProductos.extractId(producto);
+                        producto.setId(id);
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
